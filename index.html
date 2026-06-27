@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dev-104 Project</title>
+<title>Projet Dev-104</title>
 
 <style>
 *{
@@ -14,24 +14,14 @@
 }
 
 body{
-    background:linear-gradient(135deg,#4facfe,#00f2fe);
-    background-size:400% 400%;
-    animation:bg 10s ease infinite;
-    color:white;
-}
-
-@keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+    background:#f2f2f2;
 }
 
 header{
-    background:rgba(0,0,0,.3);
-    padding:20px;
+    background:#88ca0e;
+    color:white;
     text-align:center;
-    font-size:28px;
-    backdrop-filter:blur(10px);
+    padding:20px;
 }
 
 .container{
@@ -41,7 +31,8 @@ header{
 
 aside{
     width:220px;
-    background:rgba(0,0,0,.4);
+    background:#343a40;
+    color:white;
     padding:20px;
 }
 
@@ -54,15 +45,15 @@ aside ul{
 }
 
 aside li{
-    padding:15px;
-    border-radius:10px;
-    transition:.3s;
-    cursor:pointer;
+    padding:10px;
+    margin-bottom:10px;
+    background:#505b66;
+    border-radius:5px;
+    transition:0.3s;
 }
 
 aside li:hover{
-    background:white;
-    color:#333;
+    background:#12ee2f;
 }
 
 main{
@@ -71,65 +62,60 @@ main{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
 }
 
-.hello{
-    font-size:55px;
+main h1{
+    color:#7cc507;
+    font-size:45px;
     animation:zoom 2s infinite;
 }
 
-.name{
-    font-size:32px;
+main h2{
     margin-top:15px;
-    animation:slide 2s infinite alternate;
+    color:#333;
 }
 
 button{
-    margin-top:35px;
-    padding:15px 35px;
+    margin-top:30px;
+    padding:10px 25px;
     border:none;
-    border-radius:30px;
-    background:white;
-    color:#0077ff;
-    font-size:18px;
+    background:#04aaa2;
+    color:white;
+    border-radius:5px;
     cursor:pointer;
-    transition:.3s;
+    transition:0.3s;
 }
 
 button:hover{
-    transform:scale(1.1);
+    transform:scale(1.05);
 }
 
-.clock{
+#message{
     margin-top:20px;
-    font-size:24px;
+    color:green;
+    font-weight:bold;
 }
 
 footer{
-    background:rgba(0,0,0,.3);
+    background:#212529;
+    color:white;
     text-align:center;
-    padding:20px;
+    padding:15px;
 }
 
 @keyframes zoom{
 0%{transform:scale(1);}
-50%{transform:scale(1.15);}
+50%{transform:scale(1.1);}
 100%{transform:scale(1);}
-}
-
-@keyframes slide{
-from{transform:translateX(-40px);}
-to{transform:translateX(40px);}
 }
 
 @media(max-width:768px){
 .container{
-flex-direction:column;
+    flex-direction:column;
 }
 
 aside{
-width:100%;
+    width:100%;
 }
 }
 </style>
@@ -138,69 +124,51 @@ width:100%;
 <body>
 
 <header>
-<h1>Mon Projet Web</h1>
+    <h1>Projet Web Dev-104</h1>
 </header>
 
 <div class="container">
 
 <aside>
+
 <h2>Menu</h2>
+
 <ul>
-<li>🏠 Accueil</li>
-<li>👤 À propos</li>
-<li>💻 Dev-104</li>
-<li>📞 Contact</li>
+<li>Accueil</li>
+<li>Formation</li>
+<li>Projet</li>
+<li>Contact</li>
 </ul>
+
 </aside>
 
 <main>
 
-<h1 class="hello">Hello Dev-104 👋</h1>
+<h1>Hello Dev-104</h1>
 
-<h2 class="name">Lahcen Elharad</h2>
+<h2>Lahcen Elharad</h2>
 
-<button onclick="changeColor()">Changer la couleur</button>
+<button onclick="showMessage()">Cliquez ici</button>
 
-<div class="clock" id="clock"></div>
+<p id="message"></p>
 
 </main>
 
 </div>
 
 <footer>
-© 2026 - Projet Dev-104 OFPPT
+
+<p>© 2026 - CMC Dev-104</p>
+
 </footer>
 
 <script>
 
-function changeColor(){
+function showMessage(){
 
-const colors=[
-"#ff0000",
-"#00ff00",
-"#ffff00",
-"#00ffff",
-"#ff00ff",
-"#ffffff"
-];
-
-document.querySelector(".hello").style.color=
-colors[Math.floor(Math.random()*colors.length)];
+document.getElementById("message").innerHTML="Bienvenue dans mon projet Web !";
 
 }
-
-function updateClock(){
-
-const now=new Date();
-
-document.getElementById("clock").innerHTML=
-now.toLocaleTimeString();
-
-}
-
-setInterval(updateClock,1000);
-
-updateClock();
 
 </script>
 
